@@ -1,6 +1,6 @@
 {
-  "name": "ui-kit",
-  "version": "0.0.0",
+  "name": "@muozalp/ui-kit",
+  "version": "0.0.1",
   "private": true,
   "type": "module",
   "main": "dist/index.js",

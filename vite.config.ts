@@ -1,5 +1,6 @@
 import { resolve } from "path";
 import { defineConfig } from 'vite'
+import { viteStaticCopy } from 'vite-plugin-static-copy';
 import vue from '@vitejs/plugin-vue'
 
 import tailwind from "tailwindcss"
@@ -14,6 +15,14 @@ export default defineConfig({
   },
   plugins: [
     vue(),
+    viteStaticCopy({
+      targets: [
+        {
+          src: 'src/assets/index.css',
+          dest: '',
+        },
+      ],
+    }),
   ],
   resolve: {
     alias: {
@@ -23,9 +32,9 @@ export default defineConfig({
   build: {
     lib: {
 
-      entry: resolve(__dirname, "src/index.ts"),
-      name: "muozalp/ui-kit",
-      fileName: "@muozalp/ui-kit",
+      entry: resolve(__dirname, 'src/index.ts'),
+      name: '@muozalp/ui-kit',
+      fileName: (format) => `@muozalp/ui-kit.${format}.js`,
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled

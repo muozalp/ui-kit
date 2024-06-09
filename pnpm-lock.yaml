@@ -124,6 +124,9 @@ devDependencies:
   vite:
     specifier: ^5.2.8
     version: 5.2.13(@types/node@20.14.2)
+  vite-plugin-static-copy:
+    specifier: ^1.0.5
+    version: 1.0.5(vite@5.2.13)
   vitest:
     specifier: ^1.4.0
     version: 1.6.0(@types/node@20.14.2)(jsdom@24.1.0)
@@ -11022,6 +11025,19 @@ packages:
       - sugarss
       - supports-color
       - terser
+    dev: true
+
+  /vite-plugin-static-copy@1.0.5(vite@5.2.13):
+    resolution: {integrity: sha512-02k0Rox+buYdEOfeilKZSgs1gXfPf9RjVztZEIYZgVIxjsVZi6AXssjzdi+qW6zYt00d3bq+tpP2voVXN2fKLw==}
+    engines: {node: ^18.0.0 || >=20.0.0}
+    peerDependencies:
+      vite: ^5.0.0
+    dependencies:
+      chokidar: 3.6.0
+      fast-glob: 3.3.2
+      fs-extra: 11.2.0
+      picocolors: 1.0.1
+      vite: 5.2.13(@types/node@20.14.2)
     dev: true
 
   /vite@5.2.13(@types/node@20.14.2):

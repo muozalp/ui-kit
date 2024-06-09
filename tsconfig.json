@@ -11,7 +11,20 @@
       "path": "./tsconfig.vitest.json"
     }
   ],
-  "baseUrl": ".",
+  "exclude": [
+    "src/App.vue",
+    "src/main.ts"
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "dist",
+    "declaration": true,
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
+  },
   "paths": {
     "@/*": [
       "./src/*"

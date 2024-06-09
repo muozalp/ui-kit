@@ -2,12 +2,19 @@
   "name": "@muozalp/ui-kit",
   "version": "0.0.1",
   "type": "module",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
+  "main": "./dist/@muozalp/ui-kit.umd.cjs",
+  "module": "./dist/@muozalp/ui-kit.js",
+  "exports": {
+    ".": {
+      "import": "./dist/@muozalp/ui-kit.js",
+      "require": "./dist/@muozalp/ui-kit.umd.cjs"
+    },
+    "./style.css": "./dist/index.css"
+  },
+  "types": "./dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/muozalp/ui-kit"
@@ -16,9 +23,8 @@
     "registry": "https://npm.pkg.github.com"
   },
   "scripts": {
-    "dev": "vite",
-    "build": "run-p type-check \"build-only {@}\" --",
-    "preview": "vite preview",
+    "build": "vite build && vue-tsc --emitDeclarationOnly",
+    "types": "vue-tsc ",
     "test:unit": "vitest",
     "test:e2e": "playwright test",
     "build-only": "vite build",
@@ -53,6 +59,7 @@
     "@types/jsdom": "^21.1.6",
     "@types/node": "^20.14.2",
     "@vitejs/plugin-vue": "^5.0.4",
+    "@vue/cli-service": "^5.0.8",
     "@vue/eslint-config-prettier": "^9.0.0",
     "@vue/eslint-config-typescript": "^13.0.0",
     "@vue/test-utils": "^2.4.5",
